@@ -4,7 +4,7 @@ This repository contains my personal dot file setup. It includes a setup script 
 
 ## Setup Script
 
-The `setup.sh` script is used to initialize the workspace. It first creates backups of any existing dotfiles in your home directory to a directory named `dotfile_backups` in your home directory. Then, it creates symbolic links from your home directory to the new dotfiles in this repository.
+The [`setup.sh`](setup.sh) script is used to initialize the workspace. It first creates backups of any existing dotfiles in your home directory to a directory named `dotfile_backups` in your home directory. Then, it creates symbolic links from your home directory to the new dotfiles in this repository.
 
 To run the setup script, navigate to the directory containing the script and execute it:
 
