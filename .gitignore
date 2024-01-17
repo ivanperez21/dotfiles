@@ -1,0 +1,2 @@
+*.log
+.scripts/audio-reset.sh
