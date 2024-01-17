@@ -92,7 +92,7 @@ Process_bkup_smlk() {
     find "$source_dir" -maxdepth 1 -type f | while IFS= read -r file; do
         
         # Skip 'error.log' and 'setup.sh'
-        if [[ "$(basename "$file")" == "error.log" || "$(basename "$file")" == "setup.sh" || "$(basename "$file")" == "README.MD" || "$(basename "$file")" == "LICENSE" ]]; then
+        if [[ "$(basename "$file")" == "error.log" || "$(basename "$file")" == "setup.sh" || "$(basename "$file")" == "README.md" || "$(basename "$file")" == "LICENSE" ]]; then
             continue
         fi
 
