@@ -27,3 +27,9 @@ The [`.bashrc`](.bashrc) and [`.bash_aliases`](.bash_aliases) files contain conf
 The Starship prompt is configured using the `starship.toml` file. 
 
 To use these configurations, clone the repository and run the setup script. The script will back up your existing dotfiles to `~/.dotfile_backup`.
+
+
+## TODO
+1. Improve process function to better target intended files for processing or ignore files that should not be processed.
+2. Source the new .bashrc file after setup. So that prompt is updated immediately.
+3. Improve logs to have date/time stamps and state the beginning and end of each script run.
