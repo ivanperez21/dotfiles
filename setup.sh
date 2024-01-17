@@ -58,12 +58,12 @@ backup_file() {
 
         echo "Backing up $(basename "$file")..."
         sudo -u "$SUDO_USER" cp "$file" "$backup_dir"
-        echo "backing up file $file" >> "$log_file" 
-        echo "backing up dir $backup_dir" >> "$log_file" 
-        
         if [ $? -ne 0 ]; then
             echo "Error: Failed to backup $(basename "$file")" | tee -a "$log_file" >&2
         fi
+        echo "backing up file $file" >> "$log_file" 
+        echo "backing up dir $backup_dir" >> "$log_file" 
+        
     else
         echo "Info: File $file does not exist, skipping backup." | tee -a "$log_file" >&2
     fi
@@ -75,11 +75,12 @@ create_symlink() {
     local target_file=$2
     echo "Creating symbolic link for $(basename "$source_file")..."
     ln -sf "$source_file" "$target_file"
-    echo "create sym link source file $source_file" >> "$log_file" 
-    echo "create sym link target file $target_file" >> "$log_file" 
     if [ $? -ne 0 ]; then
         echo "Error: Failed to create symlink for $(basename "$source_file")" >&2
     fi
+    echo "create sym link source file $source_file" >> "$log_file" 
+    echo "create sym link target file $target_file" >> "$log_file" 
+
 }
 
 # Function to process files and create their backups and symlinks to new dotfiles
