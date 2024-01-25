@@ -11,6 +11,7 @@ user_home=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
 backup_dir="$user_home/.dotfile_backup"
 config_dir="$user_home/.config"
 script_dir="$user_home/.scripts"
+tmux_dir="$user_home/.tmux"
 log_file="./error.log"
 
 # Create directories and files if it doesn't exist
