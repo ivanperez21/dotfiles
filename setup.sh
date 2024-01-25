@@ -114,5 +114,7 @@ install_starship
 Process_bkup_smlk "$(pwd)/.config" "$config_dir"
 Process_bkup_smlk "$(pwd)/.scripts" "$script_dir"
 Process_bkup_smlk "$(pwd)/" "$user_home/"
+Process_bkup_smlk "$(pwd)/.tmux.conf" "$tmux_dir"
+
 
 echo "Setup complete."
