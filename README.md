@@ -1,35 +1,36 @@
-# My Dot Files
+# Dotfiles (Stow-based)
 
-This repository contains my personal dot file setup. It includes a setup script and configuration files for the bash shell and the Starship prompt.
+My personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Each folder (like `shell`, `config`, `tmux`) is a Stow package. Symlinks are created into `$HOME` automatically.
 
-## Setup Script
+## 📦 Usage
 
-The [`setup.sh`](setup.sh) script is used to initialize the workspace. It first creates backups of any existing dotfiles in your home directory to a directory named `dotfile_backups` in your home directory. Then, it creates symbolic links from your home directory to the new dotfiles in this repository.
+### Install Stow
 
-To run the setup script, navigate to the directory containing the script and execute it:
-
-```sh
-./setup.sh
+```bash
+sudo apt install stow
 ```
+### Stow a config package
 
-Please note that you may need to grant execute permissions to the script before running it:
-
-```sh
-chmod +x setup.sh
+Create symlinks from the specified package directory into your home directory so your applications pick up the new or updated dotfiles.
+```bash
+cd ~/.dotfiles
+stow shell      # Links .bashrc, .profile, etc. to ~/
+stow config     # Links files in .config/
+stow tmux       # Links .tmux.conf and plugins
 ```
-
-## Bash Configuration
-
-The [`.bashrc`](.bashrc) and [`.bash_aliases`](.bash_aliases) files contain configurations for the bash shell. They include aliases, functions, and other settings to customize the shell environment.
-
-## Starship Prompt
-
-The Starship prompt is configured using the `starship.toml` file. 
-
-To use these configurations, clone the repository and run the setup script. The script will back up your existing dotfiles to `~/.dotfile_backup`.
-
-
-## TODO
-1. Improve process function to better target intended files for processing or ignore files that should not be processed.
-2. Source the new .bashrc file after setup. So that prompt is updated immediately.
-3. Improve logs to have date/time stamps and state the beginning and end of each script run.
+### Unstow (remove symlinks)
+Remove the symlinks for a given package—this safely “deactivates” those dotfiles without deleting any actual files.
+```bash
+stow -D shell
+```
+### Restow (force update symlinks)
+Re-create all symlinks for a package in one step, useful if you’ve moved or renamed files and need to refresh the links.
+```bash
+stow -R shell
+```
+#### Do the Git
+```bash
+git add .
+git commit -m "Describe your changes"
+git push
+```
