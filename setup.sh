@@ -107,7 +107,7 @@ Process_bkup_smlk() {
 }
 
 # Main execution
-# install_packages
+install_packages
 install_starship
 
 # Run the functions to proces the files the source dir,.config/, and .scripts/
