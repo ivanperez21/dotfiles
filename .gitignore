@@ -1,2 +1,3 @@
 *.log
+.dotfile_backup/
 .scripts/audio-reset.sh
