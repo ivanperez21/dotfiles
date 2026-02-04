@@ -2,3 +2,4 @@
 .dotfile_backup/
 .scripts/audio-reset.sh
 config/.config/nvim/
+tmux/.tmux/plugins/
